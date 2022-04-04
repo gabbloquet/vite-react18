@@ -15,7 +15,7 @@
 
 1. `npm init vite@latest vite-react18 -- --template react-ts`
 2. `npm install`
-3. `npm install -E react-router-dom@5.3.0 @types/react-router-dom@5.3.3`
+3. `npm install react-router-dom @types/react-router-dom`
 4. Update `react` & `react-dom` from [package.json](./package.json) to `^18.0.0`
 
 ## React 18
