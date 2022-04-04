@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./Home";
 import UseId from "./concurrency/UseId";
 import UseDeferredValue from "./concurrency/UseDeferredValue";
-import {AutomaticBatchingComponent} from "./automaticBatchingFeature";
+import AutomaticBatching from "./AutomaticBatching";
 
 
 const App = () => (
@@ -11,7 +11,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/useId" element={<UseId />}  />
       <Route path="/useDeferredValue" element={<UseDeferredValue />}  />
-      <Route path="/auto-batching" element={<AutomaticBatchingComponent />}  />
+      <Route path="/auto-batching" element={<AutomaticBatching />}  />
     </Routes>
   </BrowserRouter>
 );
