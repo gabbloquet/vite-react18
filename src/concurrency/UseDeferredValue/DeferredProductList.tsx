@@ -5,7 +5,7 @@ interface ProductListProps {
   products: Product[];
 }
 
-function ProductList({ products }: ProductListProps): JSX.Element {
+export const DeferredProductList = ({ products }: ProductListProps): JSX.Element => {
   const deferredProducts = useDeferredValue(products);
   return (
     <ul>
@@ -16,4 +16,12 @@ function ProductList({ products }: ProductListProps): JSX.Element {
   );
 }
 
-export default ProductList;
+export const ProductList = ({ products }: ProductListProps): JSX.Element => {
+  return (
+    <ul>
+      {products.map((product: Product) => (
+        <li>Product {product.id}</li>
+      ))}
+    </ul>
+  );
+}

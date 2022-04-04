@@ -38,7 +38,7 @@
 
 **New hooks linked** :
  - `useDeferredValue` : Interesting for user experience, if you type in an input with a lot of elements (loading when search), using this hook give to user opportunity to continue typing even if there is an action at the same time, allows concurrency.
- - `useDeferredValue` : Allows managing changes in a state. Exemple put a loading message on searching, or a loader.
+ - `useTransition` : Allows managing changes in a state. Exemple put a loading message on searching, or a loader.
  - `useId` : create an id like `:r0:` which could be use in input if, label htmlFor... Seems to just increment it.
 
 #### Hooks
