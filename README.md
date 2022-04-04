@@ -36,6 +36,13 @@
 Usage : `For example, you can use startTransition to navigate between screens without blocking user input. Or useDeferredValue to throttle expensive re-renders.`  
 But : `However, long term, we expect the main way you’ll add concurrency to your app is by using a concurrent-enabled library or framework. (router libraries will automatically wrap navigations in startTransition)`
 
+New hooks linked : `startTransition`, `useDeferredValue` and `useId`.
+
+#### Hooks
+
+ - `useSyncExternalStore` :  allows external stores to support concurrent reads by forcing updates to the store to be synchronous.
+ - `useInsertionEffect` : allows CSS-in-JS libraries to address performance issues of injecting styles in render.
+
 ### Changes
 
 Root DOM :
