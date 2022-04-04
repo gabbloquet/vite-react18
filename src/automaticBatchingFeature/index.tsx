@@ -24,8 +24,7 @@ export const AutomaticBatchingComponent = () => {
 			setRandomStateNumber4(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber5(Math.floor(Math.random() * 100) + 1);
 		}, 3000);
-		return () => clearTimeout(timer);
-	}, []);
+	});
 
 
 	return (
