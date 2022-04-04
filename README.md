@@ -38,6 +38,10 @@ But : `However, long term, we expect the main way you’ll add concurrency to yo
 
 New hooks linked : `startTransition`, `useDeferredValue` and `useId`.
 
+`useDeferredValue` : Interesting for user experience, if you type in an input with a lot of elements (loading when search), using this hook give to user opportunity to continue typing even if there is an action at the same time, allows concurrency.
+`useDeferredValue` : Allows managing changes in a state. Exemple put a loading message on searching, or a loader.
+`useId` : create an id like `:r0:` which could be use in input if, label htmlFor... Seems to just increment it.
+
 #### Hooks
 
  - `useSyncExternalStore` :  allows external stores to support concurrent reads by forcing updates to the store to be synchronous.
