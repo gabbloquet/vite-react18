@@ -25,8 +25,10 @@
 #### Concurrent rendering
 
 `A key property of Concurrent React is that rendering is interruptible.`  
-Before : `With synchronous rendering, once an update starts rendering, nothing can interrupt it until the user can see the result on screen.`  
-After : `React may start rendering an update, pause in the middle, then continue later. It may even abandon an in-progress render altogether. React guarantees that the UI will appear consistent even if a render is interrupted. To do this, it waits to perform DOM mutations until the end, once the entire tree has been evaluated. With this capability, React can prepare new screens in the background without blocking the main thread. This means the UI can respond immediately to user input even if it’s in the middle of a large rendering task, creating a fluid user experience.`  
+
+**Before** : `With synchronous rendering, once an update starts rendering, nothing can interrupt it until the user can see the result on screen.`  
+
+**After** : `React may start rendering an update, pause in the middle, then continue later. It may even abandon an in-progress render altogether. React guarantees that the UI will appear consistent even if a render is interrupted. To do this, it waits to perform DOM mutations until the end, once the entire tree has been evaluated. With this capability, React can prepare new screens in the background without blocking the main thread. This means the UI can respond immediately to user input even if it’s in the middle of a large rendering task, creating a fluid user experience.`  
 
 `In our testing, we’ve upgraded thousands of components to React 18. What we’ve found is that nearly all existing components “just work” with concurrent rendering, without any changes.`  
 `The new rendering behavior in React 18 is only enabled in the parts of your app that use new features.`  
