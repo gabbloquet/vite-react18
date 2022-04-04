@@ -1,45 +1,44 @@
-import { useState } from 'react'
+import { useState, useId, ChangeEvent } from 'react';
+
+import favicon from './favicon.svg'
 import logo from './logo.svg'
+
 import './App.css'
 
+import { generateProducts } from './data';
+import ProductList from './ProductList';
+
+const dummyProducts = generateProducts();
+
+function filterProducts(filterTerm: string) {
+  if (!filterTerm) {
+    return dummyProducts;
+  }
+  return dummyProducts.filter((product) => product.id.toString().includes(filterTerm));
+}
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [filterTerm, setFilterTerm] = useState('');
+  const inputId = useId();
+
+  const filteredProducts = filterProducts(filterTerm);
+
+  function updateFilterHandler(event: ChangeEvent<HTMLInputElement>) {
+    setFilterTerm(event.target.value);
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+        <p>Hello <img src={favicon} className="logo" alt="logo" /> + <img src={logo} className="logo" alt="logo" /></p>
+        <label htmlFor={inputId}>Filter</label>
+        <input id={inputId} type="text" onChange={updateFilterHandler} />
+        <ProductList products={filteredProducts} />
       </header>
     </div>
   )
 }
 
 export default App
+
