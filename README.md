@@ -36,11 +36,10 @@
 Usage : `For example, you can use startTransition to navigate between screens without blocking user input. Or useDeferredValue to throttle expensive re-renders.`  
 But : `However, long term, we expect the main way you’ll add concurrency to your app is by using a concurrent-enabled library or framework. (router libraries will automatically wrap navigations in startTransition)`
 
-New hooks linked : `startTransition`, `useDeferredValue` and `useId`.
-
-`useDeferredValue` : Interesting for user experience, if you type in an input with a lot of elements (loading when search), using this hook give to user opportunity to continue typing even if there is an action at the same time, allows concurrency.
-`useDeferredValue` : Allows managing changes in a state. Exemple put a loading message on searching, or a loader.
-`useId` : create an id like `:r0:` which could be use in input if, label htmlFor... Seems to just increment it.
+New hooks linked :
+ - `useDeferredValue` : Interesting for user experience, if you type in an input with a lot of elements (loading when search), using this hook give to user opportunity to continue typing even if there is an action at the same time, allows concurrency.
+ - `useDeferredValue` : Allows managing changes in a state. Exemple put a loading message on searching, or a loader.
+ - `useId` : create an id like `:r0:` which could be use in input if, label htmlFor... Seems to just increment it.
 
 #### Hooks
 
