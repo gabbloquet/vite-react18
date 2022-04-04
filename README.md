@@ -20,7 +20,9 @@
 
 ## React 18
 
-### Concurrent rendering
+### Features
+
+#### Concurrent rendering
 
 `A key property of Concurrent React is that rendering is interruptible.`  
 Before : `With synchronous rendering, once an update starts rendering, nothing can interrupt it until the user can see the result on screen.`  
@@ -32,3 +34,31 @@ After : `React may start rendering an update, pause in the middle, then continue
 Usage : `For example, you can use startTransition to navigate between screens without blocking user input. Or useDeferredValue to throttle expensive re-renders.`  
 But : `However, long term, we expect the main way you’ll add concurrency to your app is by using a concurrent-enabled library or framework. (router libraries will automatically wrap navigations in startTransition)`
 
+### Changes
+
+Root DOM :
+```jsx
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<App tab="home" />);
+```
+
+Hidrate : 
+```jsx
+import { hydrateRoot } from 'react-dom/client';
+const container = document.getElementById('app');
+const root = hydrateRoot(container, <App tab="home" />);
+// Unlike with createRoot, you don't need a separate root.render() call here.
+```
+
+react-dom/server:
+ - renderToNodeStream: Deprecated ⛔️️
+ - renderToPipeableStream: New ✨
+ - renderToReadableStream: New ✨
+ - renderToString: Limited ⚠️ 
+ - renderToStaticMarkup: Limited ⚠️
+ - renderToStaticNodeStream
+
+Automatic batching:
+`Starting in React 18 with createRoot, all updates will be automatically batched, no matter where they originate from.` (Before only the case for react actions, multiples `setState` for exemple).
