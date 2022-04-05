@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useLayoutEffect, useState} from "react";
 
 export const AutomaticBatchingComponent = () => {
 
@@ -13,24 +13,28 @@ export const AutomaticBatchingComponent = () => {
 	const resetCounter = () => {
 		setCount(0);
 		setResetCount(resetCount+1);
+		setRandomStateNumber1(0);
+		setRandomStateNumber2(0);
+		setRandomStateNumber3(0);
+		setRandomStateNumber4(0);
+		setRandomStateNumber5(0);
 	}
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
+	const handleClick = () => {
+		fetchSomething().then(() => {
 			setCount(count+1);
 			setRandomStateNumber1(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber2(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber3(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber4(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber5(Math.floor(Math.random() * 100) + 1);
-		}, 3000);
-	});
-
+		});
+	}
 
 	return (
 		<section>
 			<article>
-			<button onClick={() => setCount(count+1)}>
+			<button onClick={() => handleClick()}>
 				Count
 			</button>
 
@@ -57,6 +61,19 @@ export const AutomaticBatchingComponent = () => {
 					{randomStateNumber1} & {randomStateNumber2} & {randomStateNumber3} & {randomStateNumber4} & {randomStateNumber5}
 				</p>
 			</article>
+			<LogEvents />
 		</section>
 	)
+}
+
+function fetchSomething() {
+	return new Promise((resolve) => setTimeout(resolve, 250));
+}
+
+function LogEvents() {
+	useLayoutEffect(() => {
+		console.log("DOM Change rendered");
+	});
+	console.log("Changes occured");
+	return null;
 }

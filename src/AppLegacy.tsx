@@ -3,16 +3,16 @@ import {Home} from "./home";
 import {AutomaticBatchingComponent} from "./automaticBatchingFeature";
 import './App.css'
 
-function App() {
+function AppLegacy() {
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/auto-batching" element={<AutomaticBatchingComponent />} />
+        <Route path="/auto-batching-legacy" element={<AutomaticBatchingComponent />} />
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default AppLegacy
