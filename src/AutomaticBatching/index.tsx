@@ -59,7 +59,6 @@ const AutomaticBatching = () => {
 	);
 };
 
-export default AutomaticBatching;
 function fetchSomething() {
 	return new Promise((resolve) => setTimeout(resolve, 250));
 }
