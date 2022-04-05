@@ -5,7 +5,7 @@ import {generateProducts} from "./data";
 
 const dummyProducts = generateProducts();
 
-const filterProducts = (filterTerm: string) => {
+export const filterProducts = (filterTerm: string) => {
   if (!filterTerm) {
     return dummyProducts;
   }
@@ -26,6 +26,7 @@ const UseDeferredValue = () => {
     <article>
       <header>
         <h1>useDeferredValue</h1>
+        <p>Interesting for user experience, if you type in an input with a lot of elements (loading when search), using this hook give to user opportunity to continue typing even if there is an action at the same time, allows concurrency.</p>
         <label htmlFor={inputId}>Filter</label>
         <input id={inputId} type="text" onChange={updateFilterHandler} />
       </header>

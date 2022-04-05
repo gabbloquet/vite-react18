@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-const AutomaticBatchingComponent = () => {
+const AutomaticBatching = () => {
 
 	const [count, setCount] = useState(0);
 	const [resetCount, setResetCount] = useState(0);
@@ -61,4 +61,4 @@ const AutomaticBatchingComponent = () => {
 	)
 }
 
-export default AutomaticBatchingComponent;
+export default AutomaticBatching;

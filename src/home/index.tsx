@@ -19,10 +19,11 @@ const Home = () => (
       </p>
     </header>
     <main>
-      <h1>Discovering new hooks : </h1>
+      <h1>Discovering new features : </h1>
       <div className='line'>
         <Link to={'/useId'}>useID</Link>
         <Link to={'/useDeferredValue'}>useDeferredValue</Link>
+        <Link to={'/useTransition'}>useTransition</Link>
         <Link to={'/auto-batching'}>Automatic Batching</Link>
       </div>
     </main>
