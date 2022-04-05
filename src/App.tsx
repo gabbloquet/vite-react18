@@ -3,7 +3,6 @@ import UseId from "./concurrency/UseId";
 import Home from "./Home";
 import UseDeferredValue from "./concurrency/UseDeferredValue";
 import AutomaticBatching from "./AutomaticBatching";
-import './App.css'
 
 const App = () => (
   <BrowserRouter>

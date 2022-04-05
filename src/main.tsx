@@ -19,4 +19,4 @@ ReactDOM.render(
     <AppLegacy />
   </React.StrictMode>
   ,document.getElementById('root-legacy')
-)
+);
