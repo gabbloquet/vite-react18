@@ -3,16 +3,16 @@ import {Home} from "./home";
 import {AutomaticBatchingComponent} from "./automaticBatchingFeature";
 import './App.css'
 
-function App() {
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/auto-batching" element={<AutomaticBatchingComponent />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/useId" element={<UseId />}  />
+      <Route path="/useDeferredValue" element={<UseDeferredValue />}  />
+      <Route path="/auto-batching" element={<AutomaticBatching />}  />
+    </Routes>
+  </BrowserRouter>
+);
 
-export default App
+export default App;

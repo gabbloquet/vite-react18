@@ -1,6 +1,6 @@
 import {useLayoutEffect, useState} from "react";
 
-export const AutomaticBatchingComponent = () => {
+const AutomaticBatchingComponent = () => {
 
 	const [count, setCount] = useState(0);
 	const [resetCount, setResetCount] = useState(0);
@@ -65,6 +65,8 @@ export const AutomaticBatchingComponent = () => {
 		</section>
 	)
 }
+
+export default AutomaticBatchingComponent;
 
 function fetchSomething() {
 	return new Promise((resolve) => setTimeout(resolve, 250));

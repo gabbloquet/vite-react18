@@ -33,8 +33,18 @@
 `In our testing, we’ve upgraded thousands of components to React 18. What we’ve found is that nearly all existing components “just work” with concurrent rendering, without any changes.`  
 `The new rendering behavior in React 18 is only enabled in the parts of your app that use new features.`  
 
-Usage : `For example, you can use startTransition to navigate between screens without blocking user input. Or useDeferredValue to throttle expensive re-renders.`  
-But : `However, long term, we expect the main way you’ll add concurrency to your app is by using a concurrent-enabled library or framework. (router libraries will automatically wrap navigations in startTransition)`
+**Usage** : `For example, you can use startTransition to navigate between screens without blocking user input. Or useDeferredValue to throttle expensive re-renders.`  
+**But** : `However, long term, we expect the main way you’ll add concurrency to your app is by using a concurrent-enabled library or framework. (router libraries will automatically wrap navigations in startTransition)`
+
+**New hooks linked** :
+ - `useDeferredValue` : Interesting for user experience, if you type in an input with a lot of elements (loading when search), using this hook give to user opportunity to continue typing even if there is an action at the same time, allows concurrency.
+ - `useTransition` : Allows managing changes in a state. Exemple put a loading message on searching, or a loader.
+ - `useId` : create an id like `:r0:` which could be use in input if, label htmlFor... Seems to just increment it.
+
+#### Hooks
+
+ - `useSyncExternalStore` :  allows external stores to support concurrent reads by forcing updates to the store to be synchronous.
+ - `useInsertionEffect` : allows CSS-in-JS libraries to address performance issues of injecting styles in render.
 
 ### Changes
 
