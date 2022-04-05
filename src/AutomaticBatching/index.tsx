@@ -12,7 +12,7 @@ const AutomaticBatching = () => {
 
 	const resetCounter = () => {
 		setCount(0);
-		setResetCount(resetCount+1);
+		setResetCount(resetCount + 1);
 		setRandomStateNumber1(0);
 		setRandomStateNumber2(0);
 		setRandomStateNumber3(0);
@@ -22,7 +22,7 @@ const AutomaticBatching = () => {
 
 	const handleClick = () => {
 		fetchSomething().then(() => {
-			setCount(count+1);
+			setCount(count + 1);
 			setRandomStateNumber1(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber2(Math.floor(Math.random() * 100) + 1);
 			setRandomStateNumber3(Math.floor(Math.random() * 100) + 1);
@@ -38,34 +38,28 @@ const AutomaticBatching = () => {
 				Count
 			</button>
 
-			<button onClick={() => resetCounter()}>
-				Reset
-			</button>
-		</article>
-
-			<article>
-				<h2>
-					Count : {count}
-				</h2>
-
-				<h2>
-					Reset times : {resetCount}
-				</h2>
+				<button onClick={() => resetCounter()}>Reset</button>
 			</article>
 
 			<article>
+				<h2>Count : {count}</h2>
+
+				<h2>Reset times : {resetCount}</h2>
+			</article>
+
+			<article>
+				<p>Here is some random datas to be re-rendered :</p>
 				<p>
-					Here is some random datas to be re-rendered :
-				</p>
-				<p>
-					{randomStateNumber1} & {randomStateNumber2} & {randomStateNumber3} & {randomStateNumber4} & {randomStateNumber5}
+					{randomStateNumber1} & {randomStateNumber2} & {randomStateNumber3} & {randomStateNumber4}{' '}
+          & {randomStateNumber5}
 				</p>
 			</article>
 			<LogEvents />
 		</section>
-	)
-}
+	);
+};
 
+export default AutomaticBatching;
 function fetchSomething() {
 	return new Promise((resolve) => setTimeout(resolve, 250));
 }
