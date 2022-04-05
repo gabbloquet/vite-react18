@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, useState, useTransition} from 'react';
+import React, {useState, useTransition} from 'react';
 import {filterProducts} from "../UseDeferredValue";
 import {ProductList} from "../UseDeferredValue/DeferredProductList";
 
@@ -9,7 +9,7 @@ const UseTransition = () => {
 
   const filteredProducts = filterProducts(filterTerm);
 
-  const updateFilterHandler = (event ) => {
+  const updateFilterHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     startTransition(() => {
       setFilterTerm(event.target.value);
     });
