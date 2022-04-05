@@ -1,6 +1,6 @@
 import {useLayoutEffect, useState} from "react";
 
-const AutomaticBatchingComponent = () => {
+const AutomaticBatching = () => {
 
 	const [count, setCount] = useState(0);
 	const [resetCount, setResetCount] = useState(0);
@@ -66,8 +66,6 @@ const AutomaticBatchingComponent = () => {
 	)
 }
 
-export default AutomaticBatchingComponent;
-
 function fetchSomething() {
 	return new Promise((resolve) => setTimeout(resolve, 250));
 }
@@ -79,3 +77,5 @@ function LogEvents() {
 	console.log("Changes occured");
 	return null;
 }
+
+export default AutomaticBatching;

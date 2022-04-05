@@ -1,8 +1,9 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {Home} from "./home";
-import {AutomaticBatchingComponent} from "./automaticBatchingFeature";
+import UseId from "./concurrency/UseId";
+import Home from "./Home";
+import UseDeferredValue from "./concurrency/UseDeferredValue";
+import AutomaticBatching from "./AutomaticBatching";
 import './App.css'
-
 
 const App = () => (
   <BrowserRouter>
