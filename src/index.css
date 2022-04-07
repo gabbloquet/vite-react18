@@ -20,6 +20,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-#root {
+#app {
   width: 100%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.line {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav .line:last-child {
+  margin-top: 2em;
+}
+
+a {
+  color: white;
 }

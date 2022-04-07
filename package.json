@@ -6,17 +6,25 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "ssr:dev": "node server",
+    "ssr:build": "npm run build:client && npm run build:server",
+    "ssr:build:client": "vite build --outDir dist/client",
+    "ssr:build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
     "format:check": "prettier --check ./src",
     "format:write": "prettier --write ./src",
     "lint:check": "eslint ./src",
     "lint:fix": "eslint --fix ./src"
   },
   "dependencies": {
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^5.3.0"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "@types/react-dom": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
